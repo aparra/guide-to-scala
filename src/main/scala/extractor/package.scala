@@ -1,3 +1,4 @@
+import java.net.URL
 
 package object example_1 {
 
@@ -125,5 +126,22 @@ package object example_4 {
     val premiumUser = new PremiumUser(name = "Ligia", score = 100)
     println(notify(premiumUser))
     // premium users are never to be spammed
+  }
+}
+
+package object exercise_1 {
+
+  object HttpUrl {
+    def unapply(url: URL): Option[String] =
+      if (url.getProtocol.startsWith("http")) Some(url.toExternalForm)
+      else None
+  }
+
+  def main(args: Array[String]) {
+    val url = new URL("http://danielwestheide.com") match {
+      case HttpUrl(value) => s"website: $value"
+      case _ => "???"
+    }
+    println(url) // website: http://danielwestheide.com
   }
 }
