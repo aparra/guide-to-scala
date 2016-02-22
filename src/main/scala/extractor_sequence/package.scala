@@ -1,3 +1,8 @@
+/*
+  reference:
+  http://danielwestheide.com/blog/2012/11/28/the-neophytes-guide-to-scala-part-2-extracting-sequences.html
+*/
+
 package object example_7 {
 
   def main(args: Array[String]) {
