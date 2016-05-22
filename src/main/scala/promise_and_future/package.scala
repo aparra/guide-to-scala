@@ -122,6 +122,8 @@ package object example_47 {
 
 package object example_48 {
 
+  import concurrent.ExecutionContext.Implicits.global
+
   /*
     Sometimes, there is no NIO-based library available. For instance, most database drivers you’ll
     find in the Java world nowadays are using blocking IO.
